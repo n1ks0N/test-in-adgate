@@ -1,13 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { PostState } from '../types/types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { newsType } from '../types/types';
 
-interface newsState {
-  news: PostState[];
-  isLoading: boolean;
-  error: string;
-}
-
-const initialState: newsState = {
+const initialState: newsType = {
   news: [],
   isLoading: false,
   error: '',
@@ -17,9 +11,16 @@ export const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    newsFetching(state) {},
-    newsFetchingSuccess(state) {},
-    newsFetchingError(state) {},
+    newsFetching(state) {
+      state.isLoading = true
+    },
+    newsFetchingSuccess(state) {
+      state.isLoading = false
+    },
+    newsFetchingError(state, action: PayloadAction<string>) {
+      state.isLoading = false
+      state.error = action.payload
+    },
   },
 });
 

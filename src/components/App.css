@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+section {
+  width: 80vw;
+  margin: auto;
+}
