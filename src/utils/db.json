@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "username": "Admin",
+      "password": "12345",
+      "hash": "ec2970ad7bbd86bbb3c8bd9c5f88ea53"
+    }
+  ]
+}

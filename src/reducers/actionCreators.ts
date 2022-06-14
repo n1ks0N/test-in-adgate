@@ -1,12 +1,14 @@
 import { AppDispatch } from "../store";
 import axios from 'axios'
-import { PostType } from "../types/types";
-import 'dotenv/config'
+import { NewsResultType } from "../types/types";
+import { newsSlice } from "./newsSlice";
 
 export const fetchNews = () => async (dispatch: AppDispatch) => {
   try {
-    const responce = await axios.get<PostType[]>('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=' + process.env.API_KEY)
-  } catch (e) {
-
+    dispatch(newsSlice.actions.newsFetching())
+    const responce = await axios.get<NewsResultType>('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=' + process.env.API_KEY)
+    dispatch(newsSlice.actions.newsFetchingSuccess(responce.data))
+  } catch (e: any) {
+    dispatch(newsSlice.actions.newsFetchingError(e.message))
   }
 }
