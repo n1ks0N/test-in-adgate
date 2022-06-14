@@ -32,7 +32,7 @@ const News = () => {
             <div key={i} className="news-wrapper__item">
               <h3>{item.title}</h3>
               <img src={item.urlToImage} className="news-wrapper__image" />
-              <p dangerouslySetInnerHTML={{__html: item.description}} />
+              <p dangerouslySetInnerHTML={{ __html: item.description }} />
               <p>Автор: {item.author}</p>
               <a href={item.url} target="_blank">
                 Подробнее

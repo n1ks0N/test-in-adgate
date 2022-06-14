@@ -12,19 +12,19 @@ export const newsSlice = createSlice({
   initialState,
   reducers: {
     newsFetching(state) {
-      state.news = []
-      state.isLoading = true
-      state.error = ''
+      state.news = [];
+      state.isLoading = true;
+      state.error = '';
     },
     newsFetchingSuccess(state, action: PayloadAction<NewsResultType>) {
-      state.news = action.payload.articles
-      state.isLoading = false
-      state.error = ''
+      state.news = action.payload.articles;
+      state.isLoading = false;
+      state.error = '';
     },
     newsFetchingError(state, action: PayloadAction<string>) {
-      state.news = []
-      state.isLoading = false
-      state.error = action.payload
+      state.news = [];
+      state.isLoading = false;
+      state.error = action.payload;
     },
   },
 });

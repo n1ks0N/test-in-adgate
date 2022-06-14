@@ -4,7 +4,7 @@ import { UserType } from '../types/types';
 const initialState: UserType = {
   user: '',
   isLoading: false,
-  error: ''
+  error: '',
 };
 
 export const userSlice = createSlice({
@@ -12,22 +12,21 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     userFetching(state) {
-      state.user = ''
-      state.isLoading = true
-      state.error = ''
+      state.user = '';
+      state.isLoading = true;
+      state.error = '';
     },
     userFetchingSuccess(state, action: PayloadAction<string>) {
-      state.isLoading = false
-      state.user = action.payload
-      state.error = ''
+      state.isLoading = false;
+      state.user = action.payload;
+      state.error = '';
     },
     userFetchingError(state) {
-      state.user = ''
-      state.isLoading = false
-      state.error = 'Имя пользователя или пароль введены неверно'
+      state.user = '';
+      state.isLoading = false;
+      state.error = 'Имя пользователя или пароль введены неверно';
     },
   },
 });
-
 
 export default userSlice.reducer;

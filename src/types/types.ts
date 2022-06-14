@@ -14,7 +14,7 @@ export interface ArticleType {
 export interface NewsResultType {
   status: string;
   totalResult: number;
-  articles: ArticleType[]
+  articles: ArticleType[];
 }
 
 export interface NewsStateType {
